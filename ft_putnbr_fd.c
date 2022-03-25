@@ -1,10 +1,19 @@
-#include <unistd.h>
-static void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/25 18:37:12 by gmillon           #+#    #+#             */
+/*   Updated: 2022/03/25 18:39:48 by gmillon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_putnbr_fd(int n, int fd)
+#include <unistd.h>
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
 {
 	long int	copy;
 

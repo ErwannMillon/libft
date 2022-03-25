@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmillon <gmillon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:33:04 by gmillon           #+#    #+#             */
-/*   Updated: 2022/03/21 12:33:04 by gmillon          ###   ########.fr       */
+/*   Updated: 2022/03/25 18:55:21 by gmillon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	ft_isupper(int c)
 		return (1);
 	return (0);
 }
-
 
 int	ft_isalnum(int c)
 {

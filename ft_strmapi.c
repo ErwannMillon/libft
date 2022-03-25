@@ -1,21 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/25 18:41:44 by gmillon           #+#    #+#             */
+/*   Updated: 2022/03/25 19:10:07 by gmillon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
-
-// char	ft_toupper(unsigned int a, char c)
-// {
-// 	if (c >= 97 && c <= 122)
-// 		return (c - 32);
-// 	return (c);
-// }
-
-static int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -34,7 +30,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = 0;
 	return (result);
 }
-
 
 // int main (void)
 // {

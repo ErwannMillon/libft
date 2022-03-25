@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/25 18:35:12 by gmillon           #+#    #+#             */
+/*   Updated: 2022/03/25 18:57:26 by gmillon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 static char	*ft_strrev(char *s)
 {
 	int		i;
 	int		x;
-	int 	end;
+	int		end;
 	char	tmp;
 
 	i = 0;
@@ -23,7 +35,7 @@ static char	*ft_strrev(char *s)
 	return (s);
 }
 
-static long int handle_negative(int n, int *minus)
+static long	int	handle_negative(int n, int *minus)
 {
 	long int	copy;
 
@@ -37,7 +49,7 @@ static long int handle_negative(int n, int *minus)
 	return (copy);
 }
 
-static long int num_len(long int copy)
+static long int	num_len(long int copy)
 {
 	int	len;
 
@@ -50,12 +62,13 @@ static long int num_len(long int copy)
 	return (len);
 }
 
-char *handle_zero(char *str)
+char	*handle_zero(char *str)
 {
 	str[0] = 48;
 	str[1] = 0;
 	return (str);
 }
+
 char	*ft_itoa(int n)
 {
 	long int	copy;
@@ -82,12 +95,11 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (handle_zero(str));
 	str[i] = 0;
-	return(ft_strrev(str));
+	return (ft_strrev(str));
 }
 
 // #include <stdio.h>
 // int main(void)
 // {
 // 	printf("%s\n", ft_itoa(-1234));
-
 // }

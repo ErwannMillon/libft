@@ -13,8 +13,6 @@ $(NAME): $(OBJS)
 bonus: $(BOBJS) $(OBJS)
 	ar -crs $(NAME) $(OBJS) $(BOBJS)
 all: $(NAME)
-asan: $(OBJS)
-	gcc -fsanitize=address $(OBJS) -o $(NAME)
 clean:
 	rm $(OBJS) $(BOBJS)
 fclean: clean

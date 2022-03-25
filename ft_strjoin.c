@@ -1,12 +1,31 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/25 18:40:37 by gmillon           #+#    #+#             */
+/*   Updated: 2022/03/25 19:09:30 by gmillon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int	ft_strlen(const char *s)
+#include <stdlib.h>
+#include "libft.h"
+
+static int	ft_strcpy_reti(char *dest, const char *src)
 {
-	int	i;
+	int		i;
+	int		len;
 
 	i = 0;
-	while (s[i])
+	len = ft_strlen(src);
+	while (src[i])
+	{
+		dest[i] = src[i];
 		i++;
+	}
+	dest[i] = 0;
 	return (i);
 }
 
@@ -24,13 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	joined = malloc(totallen + 1);
 	if (!joined)
 		return (NULL);
-	while (s1[k])
-	{
-		joined[i] = s1[k];
-		i++;
-		k++;
-	}
-	k = 0;
+	i = ft_strcpy_reti(joined, s1);
 	while (s2[k])
 	{
 		joined[i] = s2[k];

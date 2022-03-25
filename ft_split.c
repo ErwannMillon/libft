@@ -1,13 +1,26 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/25 18:32:43 by gmillon           #+#    #+#             */
+/*   Updated: 2022/03/25 18:34:03 by gmillon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int ft_count (const char *s, char c)
+#include <stdlib.h>
+#include "libft.h"
+
+static int	ft_count(const char *s, char c)
 {
 	int	count;
 	int	i;
 
 	i = 0;
 	count = 1;
-	while (s[i])
+	while (s && s[i])
 	{
 		while (s[i] == c && s[i])
 			i++;
@@ -20,26 +33,15 @@ static int ft_count (const char *s, char c)
 	}
 	return (count);
 }
-static char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t		i;
-	char		*sub;
 
-	i = 0;
-	while (s[start + i] && i < len)
-		i++;
-	sub = malloc((i + 1) * sizeof(char));
-	i = 0;
-	while (s[start + i] && i < len)
-	{
-		sub[i] = s[start + i];
-		i++;
-	}
-	sub[i] = 0;
-	return (sub);
+static int	get_start_word(size_t *i, const char *s, char c)
+{
+	while (s[*i] == c && s[*i])
+		*i = *i + 1;
+	return (*i);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char			**result;
 	size_t			i;
@@ -48,12 +50,12 @@ char **ft_split(char const *s, char c)
 
 	count = 0;
 	result = malloc(ft_count(s, c) * sizeof(char *));
+	if (!s || !result)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
-		while (s[i] == c && s[i])
-			i++;
-		start = i;
+		start = get_start_word(&i, s, c);
 		while (s[i] != c && s[i])
 			i++;
 		if (i != start)
@@ -67,14 +69,3 @@ char **ft_split(char const *s, char c)
 	result[count] = NULL;
 	return (result);
 }
-
-// int main(void)
-// {
-// 	int i = 0;
-// 	char * * result = ft_split(" Tripouille ", ' ');
-// 	while (result[i])
-// 	{
-// 		printf("R:%s_\n", result[i]);
-// 		i++;
-// 	}
-// }
