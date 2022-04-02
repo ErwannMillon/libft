@@ -6,13 +6,13 @@
 /*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:18:09 by gmillon           #+#    #+#             */
-/*   Updated: 2022/03/25 18:40:56 by gmillon          ###   ########.fr       */
+/*   Updated: 2022/03/31 15:36:37 by gmillon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-static int	ft_strllen(char *str)
+static int	ft_strllen(const char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ static int	ft_strllen(char *str)
 	return (i);
 }
 
-int	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	dest_len;

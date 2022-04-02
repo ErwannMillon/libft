@@ -6,7 +6,7 @@
 /*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:36:54 by gmillon           #+#    #+#             */
-/*   Updated: 2022/03/25 18:59:56 by gmillon          ###   ########.fr       */
+/*   Updated: 2022/03/31 15:18:37 by gmillon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	destcast = (char *)dest;
 	srccast = (char *)src;
 	i = 0;
-	if (dest < src)
+	if (dest && src && dest < src)
 		ft_memcpy(dest, src, len);
-	else
+	else if (dest && src)
 	{
 		destcast += len - 1;
 		srccast += len - 1;
