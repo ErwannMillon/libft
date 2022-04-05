@@ -6,7 +6,7 @@
 /*   By: gmillon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:40:37 by gmillon           #+#    #+#             */
-/*   Updated: 2022/03/25 19:09:30 by gmillon          ###   ########.fr       */
+/*   Updated: 2022/04/05 22:18:18 by gmillon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 static int	ft_strcpy_reti(char *dest, const char *src)
 {
 	int		i;
-	int		len;
 
 	i = 0;
-	len = ft_strlen(src);
 	while (src[i])
 	{
 		dest[i] = src[i];
